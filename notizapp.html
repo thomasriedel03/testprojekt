@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Notizblock</title>
+            <link rel="stylesheet" href="style.css" />
+            <script src="script2.js"></script>
+      </head>
+      <body onload="render()">
+            <header>
+                  <a href="dustbin.html">
+                        <img class="header-img" src="img/trash.png" />
+                        Papierkorb
+                  </a>
+            </header>
+            <div id="new-note-container">
+                  <input id="title-input" placeholder="Titel" /><br />
+                  <textarea id="note-input" placeholder="Notiz schreiben..."></textarea><br />
+                  <button onclick="addNote()">Notiz hinzufügen</button>
+            </div>
+            <div id="note-area"></div>
+            <div id="note-edit-popup-background" class="d-none" onclick="hidePopup()"></div>
+            <div id="note-edit-popup-window" class="d-none">
+                  <input id="title-edit" />
+                  <textarea id="note-edit"></textarea>
+                  <button onclick="saveNote(currentNote)">Speichern</button>
+            </div>
+            <div class="d-none" id="confirm-popup-window">
+                  <h2>Sind Sie sicher, dass Sie diese Notiz löschen wollen?</h2>
+                  <div>
+                        <button onclick="hidePopup()">Abbrechen</button>
+                        <button onclick="deleteNote(currentNote); hidePopup()">In den Papierkorb verschieben</button>
+                  </div>
+            </div>
+      </body>
+</html>
